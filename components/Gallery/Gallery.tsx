@@ -2,11 +2,11 @@ import Image from "next/image";
 import styles from "./Gallery.module.css";
 
 const images = [
-  { src: "/images/1.png", alt: "Overgrown ruins" },
-  { src: "/images/2.png", alt: "Trash creatures" },
-  { src: "/images/3.png", alt: "Tree bloom moment" },
-  { src: "/images/4.png", alt: "Boss encounter" },
-  { src: "/images/5.png", alt: "World map" }
+  { src: "images/1.png", alt: "Overgrown ruins" },
+  { src: "images/2.png", alt: "Trash creatures" },
+  { src: "images/3.png", alt: "Tree bloom moment" },
+  { src: "images/4.png", alt: "Boss encounter" },
+  { src: "images/5.png", alt: "World map" }
 ];
 
 export default function Gallery() {
@@ -19,10 +19,9 @@ export default function Gallery() {
       <div className={styles.grid}>
         {images.map((img, i) => (
           <div key={i} className={`${styles.item} ${i === 0 ? styles.featured : ""}`}>
-            <Image
+            <img
               src={img.src}
               alt={img.alt}
-              fill
               className={styles.img}
               sizes={i === 0 ? "66vw" : "33vw"}
             />

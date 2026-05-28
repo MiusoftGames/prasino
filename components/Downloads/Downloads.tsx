@@ -12,19 +12,16 @@ import {
   faItchIo,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./Downloads.module.css";
-import Image from "next/image";
 
 export default function Downloads() {
   return (
     <section id="downloads" className={styles.downloads}>
       {/* Background */}
       <div className={styles.bg}>
-        <Image
-          src="/images/5.png"
+        <img
+          src="images/5.png"
           alt=""
-          fill
           className={styles.bgImage}
-          priority
         />
         <div className={styles.bgOverlay} />
       </div>
@@ -114,13 +111,13 @@ export default function Downloads() {
             <div className={styles.bonusItems}>
               <div className={styles.bonusItem}>
                 <div className={styles.bonusImg}>
-                  <Image src="/images/comic.png" alt="Prásino Story Comic" fill className={styles.bonusImgInner} />
+                  <img src="images/comic.png" alt="Prásino Story Comic" className={styles.bonusImgInner} />
                 </div>
                 <span>Story Comic</span>
               </div>
               <div className={styles.bonusItem}>
                 <div className={styles.bonusImg}>
-                  <Image src="/images/maps.png" alt="Prásino Level Maps" fill className={styles.bonusImgInner} />
+                  <img src="images/maps.png" alt="Prásino Level Maps" className={styles.bonusImgInner} />
                 </div>
                 <span>Level Maps</span>
               </div>
