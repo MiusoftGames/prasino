@@ -1,0 +1,93 @@
+.reviews {
+    padding: 7rem 0;
+    border-bottom: 1px solid rgba(39, 211, 116, 0.08);
+    overflow: hidden;
+}
+
+.header {
+    padding: 0 6vw;
+    margin-bottom: 3rem;
+}
+
+.overline {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-green-primary);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.heading {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+}
+
+/* ── Infinite scroll track ── */
+.track {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+.inner {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+}
+
+.inner:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ── Card ── */
+.card {
+    width: 420px;
+    flex-shrink: 0;
+    background: var(--color-bg-card);
+    border: 1px solid rgba(39, 211, 116, 0.1);
+    border-radius: 8px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: border-color 0.25s, background 0.25s;
+}
+
+.card:hover {
+    border-color: var(--color-green-border);
+    background: var(--color-bg-elevated);
+}
+
+.text {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.name {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-green-primary);
+    letter-spacing: 0.02em;
+}

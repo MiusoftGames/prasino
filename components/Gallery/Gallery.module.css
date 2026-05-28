@@ -1,0 +1,128 @@
+.gallery {
+  padding: 7rem 6vw;
+  border-bottom: 1px solid rgba(39, 211, 116, 0.08);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.overline {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-green-primary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.heading {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 240px 240px;
+  gap: 8px;
+}
+
+.item {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(39, 211, 116, 0.06);
+}
+
+.item.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: filter 0.3s;
+  cursor: pointer;
+  min-height: 120px;
+}
+
+.item:hover .placeholder {
+  filter: brightness(1.3);
+}
+
+.placeholderIcon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.placeholderLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  /* ← auto-rows instead of fixed grid-template-rows */
+  gap: 8px;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(39, 211, 116, 0.06);
+  /* no height needed — grid-auto-rows handles it */
+}
+
+.item.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  /* 480px tall */
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item:hover .img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+    /* explicit height so images aren't 0px */
+  }
+
+  .item.featured {
+    grid-column: span 2;
+    grid-row: span 1;
+    /* don't double-span on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .item.featured {
+    grid-column: span 1;
+  }
+}

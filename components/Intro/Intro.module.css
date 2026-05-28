@@ -1,0 +1,88 @@
+.intro {
+  padding: 8rem 6vw 6rem;
+  border-bottom: 1px solid rgba(39, 211, 116, 0.08);
+}
+
+.inner {
+  max-width: 700px;
+  margin-bottom: 5rem;
+}
+
+.overline {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-green-primary);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ── Pillars ── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: rgba(39, 211, 116, 0.08);
+  border: 1px solid rgba(39, 211, 116, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pillar {
+  background: var(--color-bg-card);
+  padding: 2.5rem 2rem;
+  transition: background 0.3s;
+}
+
+.pillar:hover {
+  background: var(--color-bg-elevated);
+}
+
+.pillarIcon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.pillarLabel {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.pillarDesc {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    padding: 5rem 1.5rem 4rem;
+  }
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
